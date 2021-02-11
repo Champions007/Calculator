@@ -51,8 +51,6 @@ private slots:
 
     void on_btn_Clear_clicked();
 
-    void on_comboBox_activated(const QString &arg1);
-
 private:
     Ui::MainWindow *ui;
     void enter_char_in_text_Box(QString character);

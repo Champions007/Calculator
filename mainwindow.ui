@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>240</width>
-    <height>390</height>
+    <width>239</width>
+    <height>389</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -25,42 +25,15 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#centralwidget {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_0 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_1 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_2 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_3 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_4 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_5 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_6 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_7 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_8 {
-background-color:rgb(255, 170, 0)
-}
-QWidget#btn_9 {
-background-color:rgb(255, 170, 0)
-}
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <widget class="QPushButton" name="btn_Clear">
     <property name="geometry">
      <rect>
@@ -156,15 +129,15 @@ background-color:rgb(255, 170, 0)
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>40</y>
+      <y>0</y>
       <width>240</width>
-      <height>50</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Iosevka Nerd Font</family>
-      <pointsize>15</pointsize>
+      <pointsize>20</pointsize>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
@@ -313,17 +286,22 @@ background-color:rgb(255, 170, 0)
      <string>5</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>10</y>
-      <width>79</width>
-      <height>24</height>
-     </rect>
-    </property>
-   </widget>
   </widget>
+  <action name="actionfff">
+   <property name="text">
+    <string>fff</string>
+   </property>
+  </action>
+  <action name="actionSave_To_File">
+   <property name="text">
+    <string>Save To File</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

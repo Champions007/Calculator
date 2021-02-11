@@ -7,7 +7,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(QSize(240, 390));
-    ui->comboBox->addItem("Science");
 }
 
 MainWindow::~MainWindow()
@@ -195,12 +194,4 @@ void MainWindow::on_btn_Clear_clicked()
     first_number = 0;
     second_number = 0;
     third_number = 0;
-}
-
-void MainWindow::on_comboBox_activated(const QString &arg1)
-{
-    if(arg1 == "Science")
-    {
-        ui->btn_Sum->setText("+");
-    }
 }
