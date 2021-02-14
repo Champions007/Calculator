@@ -24,6 +24,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Images/calculator.svg</normaloff>Images/calculator.svg</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>

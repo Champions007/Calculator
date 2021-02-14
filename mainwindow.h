@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QtSvg/QtSvg>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
