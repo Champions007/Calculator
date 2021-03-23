@@ -7,6 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(QSize(240, 390));
+    first_number = 0;
+    second_number = 0;
+    third_number = 0;
+    
 }
 
 MainWindow::~MainWindow()
