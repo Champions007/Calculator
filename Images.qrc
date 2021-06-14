@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/Images">
-        <file>Images/calculator.svg</file>
-    </qresource>
-</RCC>

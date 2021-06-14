@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -48,15 +48,16 @@ void MainWindow::check_for_first_zero(QString btn_name)
     if(ui->input_Box->text().startsWith("0."))
     {
        enter_char_in_text_Box(btn_name);
+       return;
     }
-    else if(ui->input_Box->text().startsWith(ui->btn_0->text()))
+
+    if(ui->input_Box->text().startsWith(ui->btn_0->text()))
     {
        ui->input_Box->setText(btn_name);
+       return;
     }
-    else
-    {
-        enter_char_in_text_Box(btn_name);
-    }
+
+    enter_char_in_text_Box(btn_name);
 }
 
 void MainWindow::check_for_operator(char math_operator)
@@ -64,12 +65,11 @@ void MainWindow::check_for_operator(char math_operator)
     if(ui->input_Box->text().isEmpty())
     {
         ui->input_Box->setText("");
+        return;
     }
-    else
-    {
-        first_number = enter_cauculate_operator_char();
-        calculate_operator = math_operator;
-    }
+
+    first_number = enter_cauculate_operator_char();
+    calculate_operator = math_operator;
 }
 
 void MainWindow::on_btn_1_clicked()
@@ -122,15 +122,16 @@ void MainWindow::on_btn_0_clicked()
     if(ui->input_Box->text().startsWith("0."))
     {
        enter_char_in_text_Box("0");
+       return;
     }
-    else if(!ui->input_Box->text().startsWith("0"))
+
+    if(!ui->input_Box->text().startsWith("0"))
     {
         enter_char_in_text_Box("0");
+        return;
     }
-    else
-    {
-        ui->input_Box->setText("0");
-    }
+
+    ui->input_Box->setText("0");
 
 }
 
@@ -138,12 +139,9 @@ void MainWindow::on_btn_Dot_clicked()
 {
     if(ui->input_Box->text().contains(".") || ui->input_Box->text().isEmpty())
     {
-        enter_char_in_text_Box("");
+        return enter_char_in_text_Box("");
     }
-    else
-    {
-        enter_char_in_text_Box(".");
-    }
+    return enter_char_in_text_Box(".");
 }
 
 void MainWindow::on_btn_Sum_clicked()
@@ -171,24 +169,19 @@ void MainWindow::on_btn_Equal_clicked()
     if(ui->input_Box->text().isEmpty())
     {
         ui->input_Box->setText("");
+        return;
     }
-    else
+
+    if(equal_clicked == true)
     {
-        if(equal_clicked == true)
-        {
-            ui->input_Box->setText("");
-            first_number = 0;
-            second_number = 0;
-            third_number = 0;
-        }
-        else
-        {
-            second_number = QVariant(ui->input_Box->text()).toDouble();
-            ui->input_Box->clear();
-            ui->input_Box->setText(QVariant(calculate_equation(first_number, second_number, third_number, calculate_operator)).toString());
-            equal_clicked = true;
-        }
+        on_btn_Clear_clicked();
+        return;
     }
+
+    second_number = QVariant(ui->input_Box->text()).toDouble();
+    ui->input_Box->clear();
+    ui->input_Box->setText(QVariant(calculate_equation(first_number, second_number, third_number, calculate_operator)).toString());
+    equal_clicked = true;
 }
 
 void MainWindow::on_btn_Clear_clicked()
