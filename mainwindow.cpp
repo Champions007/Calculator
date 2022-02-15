@@ -20,7 +20,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::enter_char_in_text_box(QString character)
 {
-    ui->input_Box->insert(QVariant(character).toString());
+    ui->input_Box->insert(character);
 }
 
 double MainWindow::enter_cauculate_operator_char()
