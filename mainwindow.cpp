@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::enter_char_in_text_Box(QString character)
+void MainWindow::enter_char_in_text_box(QString character)
 {
     ui->input_Box->insert(QVariant(character).toString());
 }
@@ -47,7 +47,7 @@ void MainWindow::check_for_first_zero(QString btn_name)
 {
     if(ui->input_Box->text().startsWith("0."))
     {
-       enter_char_in_text_Box(btn_name);
+       enter_char_in_text_box(btn_name);
        return;
     }
 
@@ -57,7 +57,7 @@ void MainWindow::check_for_first_zero(QString btn_name)
        return;
     }
 
-    enter_char_in_text_Box(btn_name);
+    enter_char_in_text_box(btn_name);
 }
 
 void MainWindow::check_for_operator(char math_operator)
@@ -121,13 +121,13 @@ void MainWindow::on_btn_0_clicked()
 {
     if(ui->input_Box->text().startsWith("0."))
     {
-       enter_char_in_text_Box("0");
+       enter_char_in_text_box("0");
        return;
     }
 
     if(!ui->input_Box->text().startsWith("0"))
     {
-        enter_char_in_text_Box("0");
+        enter_char_in_text_box("0");
         return;
     }
 
@@ -139,9 +139,9 @@ void MainWindow::on_btn_Dot_clicked()
 {
     if(ui->input_Box->text().contains(".") || ui->input_Box->text().isEmpty())
     {
-        return enter_char_in_text_Box("");
+        return enter_char_in_text_box("");
     }
-    return enter_char_in_text_Box(".");
+    return enter_char_in_text_box(".");
 }
 
 void MainWindow::on_btn_Sum_clicked()

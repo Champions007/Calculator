@@ -53,7 +53,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    void enter_char_in_text_Box(QString character);
+    void enter_char_in_text_box(QString character);
     double enter_cauculate_operator_char();
     double calculate_equation(double first_number, double second_number, double third_number, char equation_operator);
     void check_for_first_zero(QString btn_name);
