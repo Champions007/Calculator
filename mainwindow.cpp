@@ -172,7 +172,7 @@ void MainWindow::on_btn_Equal_clicked()
         return;
     }
 
-    if(equal_clicked == true)
+    if(equal_clicked)
     {
         on_btn_Clear_clicked();
         return;
