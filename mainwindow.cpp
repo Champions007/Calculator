@@ -47,14 +47,12 @@ void MainWindow::check_for_first_zero(QString btn_name)
 {
     if(ui->input_Box->text().startsWith("0."))
     {
-       enter_char_in_text_box(btn_name);
-       return;
+       return enter_char_in_text_box(btn_name);
     }
 
     if(ui->input_Box->text().startsWith(ui->btn_0->text()))
     {
-       ui->input_Box->setText(btn_name);
-       return;
+       return ui->input_Box->setText(btn_name);
     }
 
     enter_char_in_text_box(btn_name);
@@ -64,8 +62,7 @@ void MainWindow::check_for_operator(char math_operator)
 {
     if(ui->input_Box->text().isEmpty())
     {
-        ui->input_Box->setText("");
-        return;
+        return ui->input_Box->setText("");
     }
 
     first_number = enter_cauculate_operator_char();
@@ -121,14 +118,12 @@ void MainWindow::on_btn_0_clicked()
 {
     if(ui->input_Box->text().startsWith("0."))
     {
-       enter_char_in_text_box("0");
-       return;
+       return enter_char_in_text_box("0");
     }
 
     if(!ui->input_Box->text().startsWith("0"))
     {
-        enter_char_in_text_box("0");
-        return;
+        return enter_char_in_text_box("0");
     }
 
     ui->input_Box->setText("0");
@@ -168,19 +163,18 @@ void MainWindow::on_btn_Equal_clicked()
 {
     if(ui->input_Box->text().isEmpty())
     {
-        ui->input_Box->setText("");
-        return;
+        return ui->input_Box->setText("");
     }
 
     if(equal_clicked)
     {
-        on_btn_Clear_clicked();
-        return;
+        return on_btn_Clear_clicked();
     }
 
     second_number = QVariant(ui->input_Box->text()).toDouble();
     ui->input_Box->clear();
-    ui->input_Box->setText(QVariant(calculate_equation(first_number, second_number, third_number, calculate_operator)).toString());
+    QVariant inputbox_result = calculate_equation(first_number, second_number, third_number, calculate_operator);
+    ui->input_Box->setText(inputbox_result.toString());
     equal_clicked = true;
 }
 
